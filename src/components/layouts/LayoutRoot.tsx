@@ -10,7 +10,7 @@ const LayoutRoot: FC<PropsWithChildren> = (props) => {
 	return (
 		<div className="flex flex-col w-screen h-screen bg-background">
 			<Topbar />
-			<main className="overflow-y-auto mb-16">
+			<main className="overflow-y-auto mb-16 p-3">
 				{children}
 			</main>
 			<Navbar />

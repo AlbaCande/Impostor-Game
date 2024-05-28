@@ -4,6 +4,7 @@ import './index.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { routes } from './constants/routes';
 import './i18n';
+import { Toaster } from './components/ui/sonner';
 
 const root = document.getElementById('root');
 
@@ -13,6 +14,7 @@ if (root) {
 	ReactDOM.createRoot(root).render(
 		<React.StrictMode>
 			<RouterProvider router={router} />
+			<Toaster />
 		</React.StrictMode>,
 	);
 }

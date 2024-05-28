@@ -2,18 +2,26 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
+import {
+	englishTranslations,
+	frenchTranslations,
+	spanishTranslations,
+} from './translations';
 
 const resources = {
 	en: {
 		translation: {
-			'Welcome to React': 'Welcome to React and react-i18next',
-			'Change language': 'Click to change language',
+			...englishTranslations,
 		},
 	},
 	es: {
 		translation: {
-			'Welcome to React': 'Bienvenido a React y react-i18next',
-			'Change language': 'Haz clic para cambiar el idioma',
+			...spanishTranslations,
+		},
+	},
+	fr: {
+		translation: {
+			...frenchTranslations,
 		},
 	},
 };
