@@ -1,6 +1,6 @@
 import type { FC, PropsWithChildren } from 'react';
 
-const SettingsHeading: FC<PropsWithChildren> = (props) => {
+const SectionHeading: FC<PropsWithChildren> = (props) => {
 	const {
 		children,
 	} = props;
@@ -10,4 +10,4 @@ const SettingsHeading: FC<PropsWithChildren> = (props) => {
 	);
 };
 
-export default SettingsHeading;
+export default SectionHeading;

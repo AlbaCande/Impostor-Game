@@ -24,6 +24,8 @@ const translation: TranslationObject = {
 	'settings-impostors-placeholder': 'Select the number of impostors',
 	'settings-impostors-error': 'There must be at least 3 players!',
 	'settings-saved': 'Settings saved successfully!',
+	'settings-restore': 'Restore',
+	'settings-save': 'Save',
 };
 
 export default translation;

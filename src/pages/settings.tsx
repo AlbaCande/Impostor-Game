@@ -1,7 +1,7 @@
 import ListContainer from '@/components/List/ListContainer';
 import ListedPlayer from '@/components/ListedPlayer';
 import Modal from '@/components/Modal';
-import SettingsHeading from '@/components/SettingsHeading';
+import SectionHeading from '@/components/SectionHeading';
 import LayoutRoot from '@/components/layouts/LayoutRoot';
 import PlayerActionsModalContent from '@/components/modalContents/AddPlayerModalContent';
 import { Button } from '@/components/ui/button';
@@ -27,6 +27,8 @@ const SettingsPage: FC = () => {
 	const [maxImpostors, setMaxImpostors] = useState(0);
 	const [selectedImpostors, setSelectedImpostors] = useState('');
 
+	const TIME_FOR_SELECTED_IMPOSTORS = 50;
+
 	const restoreSettings = useCallback(() => {
 		const settingsJSON = localStorage.getItem('settings');
 
@@ -42,7 +44,7 @@ const SettingsPage: FC = () => {
 
 		setTimeout(() => {
 			setSelectedImpostors(parsedSettings.numberOfImpostors);
-		}, 1);
+		}, TIME_FOR_SELECTED_IMPOSTORS);
 	}, []);
 
 	useEffect(() => {
@@ -137,14 +139,14 @@ const SettingsPage: FC = () => {
 	return (
 		<LayoutRoot>
 			<div className="flex flex-col justify-center w-full gap-2">
-				<SettingsHeading>{t('settings-game-mode')}</SettingsHeading>
+				<SectionHeading>{t('settings-game-mode')}</SectionHeading>
 				<Tabs className="w-full" value={gameMode}>
 					<TabsList className="grid w-full grid-cols-2">
 						<TabsTrigger value="classic" onClick={() => setGameMode('classic')}>{t('mode-classic')}</TabsTrigger>
 						<TabsTrigger value="adventure" onClick={() => setGameMode('adventure')}>{t('mode-adventure')}</TabsTrigger>
 					</TabsList>
 				</Tabs>
-				<SettingsHeading>{t('settings-language')}</SettingsHeading>
+				<SectionHeading>{t('settings-language')}</SectionHeading>
 				<Tabs className="w-full" value={language}>
 					<TabsList className="grid w-full grid-cols-3">
 						<TabsTrigger onClick={() => languageSelectedHandler('en')} value="en">{t('language-english')}</TabsTrigger>
@@ -152,7 +154,7 @@ const SettingsPage: FC = () => {
 						<TabsTrigger onClick={() => languageSelectedHandler('fr')} value="fr">{t('language-french')}</TabsTrigger>
 					</TabsList>
 				</Tabs>
-				<SettingsHeading>{t('settings-players')}</SettingsHeading>
+				<SectionHeading>{t('settings-players')}</SectionHeading>
 				<ListContainer>
 					{Children.toArray(players.map((player) => (
 						<ListedPlayer
@@ -188,7 +190,7 @@ const SettingsPage: FC = () => {
 					/>
 				</Modal>
 				<div className="flex flex-col gap-2 mb-4">
-					<SettingsHeading>{t('settings-impostors')}</SettingsHeading>
+					<SectionHeading>{t('settings-impostors')}</SectionHeading>
 					{((): JSX.Element => {
 						if (!maxImpostors && !impostorsOptions.length) {
 							return (
@@ -212,8 +214,8 @@ const SettingsPage: FC = () => {
 				</div>
 				<Separator />
 				<div className="flex justify-between p-4">
-					<Button variant="outline" onClick={restoreSettings}>Restore</Button>
-					<Button variant="default" disabled={!selectedImpostors} onClick={handleSave}>Save</Button>
+					<Button variant="outline" onClick={restoreSettings}>{t('settings-restore')}</Button>
+					<Button variant="default" disabled={!selectedImpostors} onClick={handleSave}>{t('settings-save')}</Button>
 				</div>
 			</div>
 		</LayoutRoot>

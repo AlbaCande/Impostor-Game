@@ -6,7 +6,6 @@ export type NavbarRoute = {
 	displayName: string
 	path: string
 	Icon: typeof GearIcon
-	isAction?: boolean
 }
 
 export const getNavbarRoutes = (i18nInstance: i18n): NavbarRoute[] => [
@@ -19,7 +18,7 @@ export const getNavbarRoutes = (i18nInstance: i18n): NavbarRoute[] => [
 	{
 		name: 'play',
 		displayName: i18nInstance.t('play-title'),
-		path: '/game',
+		path: '/play',
 		Icon: PlayIcon,
 	},
 	{
