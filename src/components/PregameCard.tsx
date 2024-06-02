@@ -27,7 +27,7 @@ const PregameCard: FC<Props> = (props) => {
 		<Card className="h-full flex flex-col justify-between bg-surface" onClick={() => isWordRevealed ? onPass && onPass() : setIsWordRevealed(true)}>
 			<CardHeader className="gap-6">
 				<CardTitle className="text-center text-6xl font-bold text-primary-foreground">{playerName}</CardTitle>
-				<CardDescription className="text-center text-4xl text-primary-foreground">{t('play-you-are')}</CardDescription>
+				<CardDescription className="text-center text-4xl text-primary-foreground">{t('play-your-word-is')}</CardDescription>
 				{((): JSX.Element => {
 					if (!isWordRevealed) {
 						return <></>;
