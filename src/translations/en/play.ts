@@ -20,6 +20,7 @@ const translation: TranslationObject = {
 	'play-impostors-win': 'Impostors win! Congratulations to: {{impostors}}!',
 	'play-innocents-win': 'Innocents win! The impostors were: {{impostors}}!',
 	'play-back-lobby': 'Back to the lobby',
+	'play-impostor': 'impostor',
 };
 
 export default translation;

@@ -4,6 +4,7 @@ import play from './play';
 
 const translations = {
 	submit: 'Soumettre',
+	loading: 'Chargement...',
 	...settings,
 	...home,
 	...play,

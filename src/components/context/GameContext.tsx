@@ -2,9 +2,11 @@ import type { InGamePlayer } from '@/pages/game';
 import type { FC, PropsWithChildren } from 'react';
 import { createContext, useState } from 'react';
 
+export type WordPair = [string, string]
+
 type GameContextValue = {
 	players: InGamePlayer[]
-	wordPair: [string, string]
+	wordPair: WordPair
 	eliminatePlayer: (playerName: string) => void
 }
 

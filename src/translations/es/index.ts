@@ -4,6 +4,7 @@ import play from './play';
 
 const translations = {
 	submit: 'Enviar',
+	loading: 'Cargando...',
 	...settings,
 	...home,
 	...play,
